@@ -8,7 +8,7 @@ import Button from '@mui/material/Button';
 import { useState, useEffect } from 'react';
 
 function App() {
-  const [team, setName] = React.useState("MIA");
+  const [team, setName] = React.useState("LAL");
   const [file, setFile] = React.useState([]);
 
   const requestOptions = {
@@ -51,14 +51,14 @@ function App() {
 
         /> */}
           {file.map((player) => 
-          <>
+          <Container  key={player.PlayerID} >
             <Typography>
               {player.Name}
             </Typography>
-            <Typography>
+            <Typography >
               {player.Position}
             </Typography>
-          </>
+          </Container>
         )}
       </Grid>
     </Container>
