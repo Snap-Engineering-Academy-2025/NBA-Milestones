@@ -1,5 +1,5 @@
-import { Box, Typography } from "@mui/material";
 import React from "react";
+import { Box, Typography } from "@mui/material";
 import Button from "@mui/material/Button";
 import { ThemeProvider } from "@mui/material/styles";
 import fenwayTheme from "./FenwayTheme";
@@ -24,20 +24,17 @@ myHeaders.append("x-api-key", "168966");
 myHeaders.append("Accept", "application/json");
 
 const requestOption = {
-  method: "GET",
-  headers: myHeaders,
-  redirect: "follow"
+    method: "GET",
+    headers: myHeaders,
+    redirect: "follow"
 };
 
-function Header() {
-    // state var to hold the first team name
-    const [team1ID, setTeam1ID] = React.useState("");
-    // state var to hold the second team name
-    const [team2ID, setTeam2ID] = React.useState("");
-    // state var to hold the array of players on the team
-    const [players1, setPlayers1] = React.useState([]);
-    // state var to hold the array of players on the team
-    const [players2, setPlayers2] = React.useState([]);
+function Header({
+    team1ID, setTeam1ID,
+    team2ID, setTeam2ID,
+    players1, setPlayers1,
+    players2, setPlayers2
+}) {
 
     function fetchTeam(teamName) {
         fetch(`https://www.thesportsdb.com/api/v1/json/123/searchteams.php?t=${teamName}`, requestOptions)
@@ -61,15 +58,13 @@ function Header() {
         fetch(`http://localhost:5000/api/players/${ID}`, requestOption)
             .then((response) => response.json())
             .then((playerRoster) => {
-                setterCallback(playerRoster);
+                setterCallback(playerRoster.list);
             })
             .catch((error) => console.error(error));
     }
 
-    console.log("team1", team1ID)
-    console.log("team 2", team2ID)
-    console.log("team 1 roster", players1)
-    console.log("team 2 roster", players2)
+    // console.log("team 1 roster", players1)
+    // console.log("team 2 roster", players2)
 
     return (
         <ThemeProvider theme={fenwayTheme}>
