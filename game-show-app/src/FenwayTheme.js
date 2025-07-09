@@ -8,7 +8,7 @@ const fenwayTheme = createTheme({
         MuiButton: {
             styleOverrides: {
                 root: {
-                    color: 'white', // 👈 This sets the text color for all buttons
+                    color: 'white', 
                 },
             },
         },
