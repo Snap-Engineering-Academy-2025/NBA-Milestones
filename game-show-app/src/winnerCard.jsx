@@ -39,6 +39,7 @@ export default function WinnerCard({ player }) {
         pb: 0,
         position: "relative",
         overflow: "hidden",
+        backgroundColor: '#ffd0d7',
         }}>
       <Typography variant="h3" 
       sx={{ color: "#ea0909", fontFamily: "Fenway"}}>
