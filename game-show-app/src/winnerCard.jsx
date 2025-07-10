@@ -3,10 +3,11 @@ import { Card, CardContent, Typography, CardMedia, Box } from "@mui/material";
 
 export default function WinnerCard({ player }) {
   const [hearts, setHearts] = useState([]);
-    console.log("inside winner")
+  console.log("inside winner")
 
   useEffect(() => {
-    if (!player || !player.strThumb) return; 
+    document.body.style.backgroundColor = "pink";
+    if (!player || !player.strThumb) return;
     const interval = setInterval(() => {
       const newHeart = {
         id: Math.random(),
@@ -23,26 +24,26 @@ export default function WinnerCard({ player }) {
     return () => clearInterval(interval);
   }, []);
 
-    if (!player || !player.strThumb) {
-        return null;
-    }
+  if (!player || !player.strThumb) {
+    return null;
+  }
 
   return (
-    <Box sx={{ 
-        // height: "100vh",
-        // width: "100%",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "flex-start",
-        justifyContent: "center", // Align content to top
-        pt: 0,
-        pb: 0,
-        position: "relative",
-        overflow: "hidden",
-        backgroundColor: '#ffd0d7',
-        }}>
-      <Typography variant="h3" 
-      sx={{ color: "#ea0909", fontFamily: "Fenway"}}>
+
+    <Box sx={{
+      // height: "100vh",
+      // width: "100%",
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "flex-start",
+      justifyContent: "center", // Align content to top
+      pt: 0,
+      pb: 0,
+      position: "relative",
+      overflow: "hidden",
+    }}>
+      <Typography variant="h3"
+        sx={{ color: "#ea0909", fontFamily: "Fenway" }}>
         💖 HOME RUN! 💖
       </Typography>
 

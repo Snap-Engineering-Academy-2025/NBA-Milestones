@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+import './index.css';
 import { useEffect } from 'react';
-import './App.css'
+import './App.css';
 import Header from './header.jsx'
 import PlayerCard from './playerCard.jsx'
 import { Box, Button, Container, Slider, ThemeProvider } from '@mui/material'
@@ -131,7 +132,8 @@ function App() {
 
 
   return (
-    <ThemeProvider theme={fenwayTheme}>
+    
+    <ThemeProvider theme={fenwayTheme} >
       <Container>
         {!winner &&
           <Header
